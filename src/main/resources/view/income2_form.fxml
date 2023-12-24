@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="root" prefHeight="793.0" prefWidth="742.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Sarasavi.controller.Income2FormController">
+   <children>
+      <AnchorPane prefHeight="831.0" prefWidth="278.0" style="-fx-background-color: #dfe4ea;">
+         <children>
+            <Label layoutX="10.0" layoutY="31.0" prefHeight="44.0" prefWidth="170.0" text="Manage Income">
+               <font>
+                  <Font name="Arial Narrow Bold" size="26.0" />
+               </font>
+            </Label>
+            <Text layoutX="39.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select A Tag To Continue" textAlignment="CENTER" wrappingWidth="189.40084474711807">
+               <font>
+                  <Font name="Book Antiqua Bold" size="33.0" />
+               </font>
+            </Text>
+            <JFXButton layoutX="16.0" layoutY="371.0" onAction="#btnMonthlyOnAction" prefHeight="61.0" prefWidth="234.0" style="-fx-background-color: #b30086; -fx-background-radius: 15;" text="MONTHLY" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="15.0" layoutY="456.0" prefHeight="63.0" prefWidth="241.0" style="-fx-background-color: #b30086; -fx-background-radius: 15;" text="ANNUWALY" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="50.0" fitWidth="48.0" layoutX="179.0" layoutY="26.0">
+               <image>
+                  <Image url="@../image/download%20(2).png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="279.0" layoutY="-3.0" prefHeight="830.0" prefWidth="952.0" style="-fx-background-color: #85929E;">
+         <children>
+            <Label layoutX="300.0" layoutY="14.0" prefHeight="74.0" prefWidth="315.0" text="Annuwaly Income Report" textAlignment="CENTER">
+               <font>
+                  <Font name="Bodoni MT Black" size="22.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tblIncome" layoutX="18.0" layoutY="82.0" prefHeight="756.0" prefWidth="902.0">
+               <columns>
+                  <TableColumn fx:id="colYear" prefWidth="442.3999938964844" text="YEAR" />
+                  <TableColumn fx:id="colIncome" prefWidth="510.39996337890625" text="Income" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

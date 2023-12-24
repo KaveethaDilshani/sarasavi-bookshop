@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="764.0" prefWidth="742.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Sarasavi.controller.EmployeeFormCntroller">
+   <children>
+      <AnchorPane layoutX="1.0" layoutY="-1.0" prefHeight="830.0" prefWidth="1295.0" style="-fx-background-color: #85929E;">
+         <children>
+            <TableView fx:id="tblEmployee" layoutX="294.0" layoutY="77.0" prefHeight="752.0" prefWidth="1022.0">
+              <columns>
+                <TableColumn fx:id="e_id" prefWidth="147.20001220703125" text="E_id" />
+                <TableColumn fx:id="e_name" prefWidth="271.25909423828125" text="E_name" />
+                  <TableColumn fx:id="e_address" prefWidth="324.740966796875" text="E_address" />
+                  <TableColumn fx:id="e_number" prefWidth="300.0000244140624" text="numbers" />
+              </columns>
+            </TableView>
+            <Label layoutX="706.0" layoutY="21.0" prefHeight="44.0" prefWidth="213.0" text="Manage Employee">
+               <font>
+                  <Font name="Arial Narrow Bold" size="26.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="829.0" prefWidth="296.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <Label layoutX="17.0" layoutY="19.0" prefHeight="44.0" prefWidth="213.0" text="Manage Employee">
+               <font>
+                  <Font name="Arial Narrow Bold" size="26.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutY="74.0" prefHeight="758.0" prefWidth="296.0" style="-fx-background-color: #dfe4ea;">
+               <children>
+                  <JFXButton layoutX="31.0" layoutY="442.0" onAction="#btnAddOnAction" prefHeight="31.0" prefWidth="100.0" style="-fx-background-color: BLACK;" text="Add" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="32.0" layoutY="519.0" onAction="#btnDeleteOnAction" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: BLACK;" text="Delete" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="32.0" layoutY="602.0" onAction="#btnUpdateOnAction" prefHeight="31.0" prefWidth="102.0" style="-fx-background-color: BLACK;" text="Update" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="160.0" layoutY="602.0" onAction="#btnClearOnAction" prefHeight="31.0" prefWidth="110.0" style="-fx-background-color: #000000;" text="Clear" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <TextField fx:id="txtId" layoutX="20.0" layoutY="131.0" onAction="#txtIdSearchOnAction" onKeyReleased="#txtEidOnKeyReleased" prefHeight="35.0" prefWidth="251.0" promptText="E_id" />
+                  <TextField fx:id="txtName" layoutX="21.0" layoutY="195.0" onKeyReleased="#txtEnameOnKeyReleased" prefHeight="35.0" prefWidth="251.0" promptText="E_Name" />
+                  <TextField fx:id="txtAddress" layoutX="21.0" layoutY="264.0" onKeyReleased="#txtEaddressOnKeyReleased" prefHeight="35.0" prefWidth="251.0" promptText="E_Address" />
+                  <TextField fx:id="txtNumber" layoutX="21.0" layoutY="334.0" onKeyReleased="#txtEnumberOnKeyReleased" prefHeight="35.0" prefWidth="251.0" promptText="E_Number" />
+                  <TextField layoutX="15.0" layoutY="48.0" prefHeight="31.0" prefWidth="258.0" promptText="Search" />
+               </children>
+            </AnchorPane>
+            <ImageView fitHeight="58.0" fitWidth="58.0" layoutX="208.0" layoutY="13.0">
+               <image>
+                  <Image url="@../image/images.png" />
+               </image>
+            </ImageView>
+            <JFXButton layoutX="160.0" layoutY="749.0" onAction="#btnReportOnAction" prefHeight="31.0" prefWidth="110.0" style="-fx-background-color: #FFD500;" text="Report">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

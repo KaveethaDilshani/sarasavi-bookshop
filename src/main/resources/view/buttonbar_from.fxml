@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootNode" prefHeight="764.0" prefWidth="1060.0" style="-fx-background-radius: 15; -fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Sarasavi.controller.ButtonbarFromController">
+   <children>
+      <AnchorPane prefHeight="827.0" prefWidth="322.0" style="-fx-background-color: BLACK; -fx-background-radius: 0;">
+         <children>
+            <JFXButton layoutX="48.0" layoutY="106.0" onAction="#btnDashboardOnAction" prefHeight="52.0" prefWidth="242.0" style="-fx-background-color: white; -fx-background-radius: 20;" text="Dashboard">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="46.0" layoutY="173.0" onAction="#btnEmployeesOnAction" prefHeight="52.0" prefWidth="247.0" style="-fx-background-color: white; -fx-background-radius: 20;" text="Manage Employee">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="46.0" layoutY="382.0" onAction="#btnPlaceOrderOnAction" prefHeight="52.0" prefWidth="247.0" style="-fx-background-color: white; -fx-background-radius: 20;" text="Place Order">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="46.0" layoutY="238.0" onAction="#btnCustomerOnAction" prefHeight="52.0" prefWidth="247.0" style="-fx-background-color: white; -fx-background-radius: 20;" text="Manage Customer">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="45.0" layoutY="452.0" onAction="#btnManageIncomeOnAction" prefHeight="52.0" prefWidth="247.0" style="-fx-background-color: white; -fx-background-radius: 20;" text="Manage Income">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="45.0" layoutY="588.0" onAction="#btnSupplierOnAction" prefHeight="52.0" prefWidth="247.0" style="-fx-background-color: white; -fx-background-radius: 20;" text="Supllier">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="45.0" layoutY="683.0" onAction="#btnSignOutOnAction" prefHeight="64.0" prefWidth="247.0" style="-fx-background-color: #FFD500; -fx-background-radius: 20;" text="LogOut">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="45.0" layoutY="518.0" onAction="#btnAttendsOnAction" prefHeight="52.0" prefWidth="247.0" style="-fx-background-color: white; -fx-background-radius: 20;" text="Attends">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="50.0" layoutY="28.0" prefHeight="52.0" prefWidth="237.0" text="Sarasavi BookShop" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="26.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="46.0" layoutY="310.0" onAction="#btnItemOnAction" prefHeight="52.0" prefWidth="247.0" style="-fx-background-color: white; -fx-background-radius: 20;" text="Manage Item">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="mainNode" layoutX="324.0" prefHeight="776.0" prefWidth="736.0" />
+   </children>
+</AnchorPane>

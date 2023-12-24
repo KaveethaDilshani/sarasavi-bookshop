@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="805.0" prefWidth="1261.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Sarasavi.controller.DashboardFormController">
+   <children>
+      <AnchorPane layoutX="5.0" layoutY="-1.0" prefHeight="793.0" prefWidth="1253.0">
+         <children>
+            <ImageView fitHeight="795.0" fitWidth="613.0" layoutY="-1.0" opacity="0.36">
+               <image>
+                  <Image url="@../image/3d-books-notepad-pencil-pen-eraser_107791-15690.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="166.0" layoutY="67.0" prefHeight="59.0" prefWidth="444.0" text=" SARASAVI BOOKSHOP...">
+               <font>
+                  <Font name="Century" size="34.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="523.0" fitWidth="575.0" layoutX="637.0" layoutY="252.0">
+               <image>
+                  <Image url="@../image/Printable-December-2023-Calendar-5-791x1024.jpg" />
+               </image>
+            </ImageView>
+            <JFXButton layoutX="635.0" layoutY="51.0" prefHeight="93.0" prefWidth="159.0" style="-fx-background-color: black; -fx-background-radius: 20;" text="Customer" textFill="WHITE">
+               <font>
+                  <Font name="Book Antiqua" size="24.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="826.0" layoutY="52.0" prefHeight="94.0" prefWidth="159.0" style="-fx-background-color: black; -fx-background-radius: 20;" text="Employee" textFill="WHITE">
+               <font>
+                  <Font name="Book Antiqua" size="24.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="1017.0" layoutY="52.0" prefHeight="94.0" prefWidth="159.0" style="-fx-background-color: black; -fx-background-radius: 20;" text="Income" textFill="WHITE">
+               <font>
+                  <Font name="Book Antiqua" size="24.0" />
+               </font>
+            </JFXButton>
+         </children></AnchorPane>
+      <Label layoutX="10.0" layoutY="8.0" prefHeight="59.0" prefWidth="260.0" text="WELCOME TO " textFill="#a61818">
+         <font>
+            <Font name="Century" size="34.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

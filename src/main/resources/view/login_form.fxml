@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootNode" maxHeight="1081.0" maxWidth="1920.0" minHeight="690.0" minWidth="1366.0" prefHeight="794.0" prefWidth="1592.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Sarasavi.controller.LoginPageController">
+    <children>
+        <ImageView fitHeight="797.0" fitWidth="1595.0" layoutX="-2.0" layoutY="-3.0">
+            <image>
+                <Image url="@../image/sarasavi.jpg" />
+            </image>
+        </ImageView>
+
+        <Label alignment="CENTER" layoutX="691.0" layoutY="51.0" prefHeight="87.0" prefWidth="713.0" text="Login to Continue" textAlignment="CENTER">
+            <font>
+                <Font name="Segoe UI Bold" size="59.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtUserName" layoutX="886.0" layoutY="241.0" prefHeight="53.0" prefWidth="342.0" promptText="Enter your username" styleClass="text-field">
+            <font>
+                <Font size="25.0" />
+            </font>
+        </TextField>
+        <JFXButton layoutX="975.0" layoutY="444.0" onAction="#btnSignInOnAction" prefHeight="57.0" prefWidth="150.0" style="-fx-background-color: black; -fx-background-radius: 50;" text="Sign In" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="29.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </JFXButton>
+
+        <PasswordField fx:id="txtPassword" layoutX="886.0" layoutY="330.0" prefHeight="53.0" prefWidth="342.0" promptText="Enter your password">
+            <font>
+                <Font size="25.0" />
+            </font>
+        </PasswordField>
+        <Label layoutX="875.0" layoutY="543.0" text="Don't have an Account ? ">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <JFXButton ellipsisString="0" layoutX="1101.0" layoutY="535.0" onAction="#btnSignUpFormOnAction" ripplerFill="#070707" text="Sign Up" textFill="#ffd500">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </JFXButton>
+        <JFXButton layoutX="887.0" layoutY="393.0" onAction="#btnForgotPasswordOnAction" text="forgot password ?">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor></JFXButton>
+    </children>
+</AnchorPane>

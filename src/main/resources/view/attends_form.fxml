@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="793.0" prefWidth="742.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Sarasavi.controller.AttendsFormController">
+   <children>
+      <AnchorPane prefHeight="833.0" prefWidth="316.0" style="-fx-background-color: white;">
+         <children>
+            <AnchorPane layoutX="-1.0" layoutY="115.0" prefHeight="718.0" prefWidth="316.0" style="-fx-background-color: #dfe4ea;">
+               <children>
+                  <JFXButton layoutX="42.0" layoutY="472.0" onAction="#btnAddOnAction" prefHeight="31.0" prefWidth="100.0" style="-fx-background-color: BLACK;" text="Add" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="170.0" layoutY="474.0" onAction="#btnClearOnAction" prefHeight="31.0" prefWidth="110.0" style="-fx-background-color: #000000;" text="Clear" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <TextField fx:id="txtWorkingHours" layoutX="28.0" layoutY="220.0" prefHeight="35.0" prefWidth="251.0" promptText="Working Hours" />
+                  <TextField fx:id="txtOtHours" layoutX="25.0" layoutY="299.0" prefHeight="35.0" prefWidth="251.0" promptText="OT Hours" />
+                  <ComboBox fx:id="cmbEmployees" layoutX="25.0" layoutY="67.0" prefHeight="35.0" prefWidth="251.0" promptText="Select Employee" />
+                  <DatePicker fx:id="txtDate" layoutX="25.0" layoutY="143.0" prefHeight="31.0" prefWidth="251.0" />
+               </children>
+            </AnchorPane>
+            <Label layoutX="16.0" layoutY="38.0" prefHeight="44.0" prefWidth="239.0" text="Manage Attends">
+               <font>
+                  <Font name="Arial Narrow Bold" size="26.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="194.0" layoutY="38.0">
+               <image>
+                  <Image url="@../image/download%20(8).png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="317.0" prefHeight="830.0" prefWidth="1000.0" style="-fx-background-color: #85929E;">
+         <children>
+            <Label layoutX="383.0" layoutY="26.0" prefHeight="18.0" prefWidth="204.0" text="Employee Details">
+               <font>
+                  <Font name="Bodoni MT Black" size="22.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tblAttendance" layoutX="-2.0" layoutY="86.0" prefHeight="746.0" prefWidth="1003.0">
+               <columns>
+                  <TableColumn fx:id="colEmpId" prefWidth="228.71823120117188" text="E_id" />
+                  <TableColumn fx:id="colDate" prefWidth="272.316162109375" text="Date" />
+                  <TableColumn fx:id="colWorkingHour" prefWidth="256.48388671875" text="Working hours" />
+                  <TableColumn fx:id="colOtHour" prefWidth="242.071044921875" text="OT hours" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
