@@ -61,6 +61,26 @@
             </JFXButton>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="mainNode" layoutX="324.0" prefHeight="776.0" prefWidth="736.0" />
+      <AnchorPane fx:id="mainNode" layoutX="324.0" layoutY="36.0" prefHeight="792.0" prefWidth="736.0" />
+      <Label layoutX="372.0" layoutY="6.0" prefHeight="16.0" prefWidth="68.0" text="Date :">
+         <font>
+            <Font name="Arial Black" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDate" layoutX="440.0" layoutY="7.0" prefHeight="21.0" prefWidth="123.0">
+         <font>
+            <Font name="System Bold Italic" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="640.0" layoutY="6.0" prefHeight="16.0" prefWidth="68.0" text="Time :">
+         <font>
+            <Font name="Arial Black" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTime" layoutX="708.0" layoutY="7.0" prefHeight="21.0" prefWidth="96.0">
+         <font>
+            <Font name="System Bold Italic" size="17.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -21,7 +21,7 @@
                   <Font name="Arial Narrow Bold" size="26.0" />
                </font>
             </Label>
-            <TableView fx:id="tblCart" layoutX="1.0" layoutY="399.0" prefHeight="314.0" prefWidth="1234.0">
+            <TableView fx:id="tblCart" layoutX="1.0" layoutY="399.0" prefHeight="251.0" prefWidth="1234.0">
               <columns>
                 <TableColumn fx:id="colItemCode" prefWidth="240.79920744895935" text="Code" />
                 <TableColumn fx:id="colDescription" prefWidth="260.80079650878906" text="Description" />
@@ -93,17 +93,17 @@
                   <Font name="System Bold Italic" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="886.0" layoutY="736.0" prefHeight="20.0" prefWidth="107.0" style="-fx-background-color: black;" text="Back" textFill="WHITE">
+            <JFXButton layoutX="886.0" layoutY="679.0" prefHeight="20.0" prefWidth="107.0" style="-fx-background-color: black;" text="Back" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </JFXButton>
-            <Label layoutX="28.0" layoutY="736.0" prefHeight="26.0" prefWidth="95.0" text="Total :">
+            <Label layoutX="28.0" layoutY="674.0" prefHeight="26.0" prefWidth="95.0" text="Total :">
                <font>
                   <Font name="System Bold" size="21.0" />
                </font>
             </Label>
-            <JFXButton layoutX="1017.0" layoutY="736.0" onAction="#btnPlaceOrderOnAction" prefHeight="37.0" prefWidth="122.0" style="-fx-background-color: #FB0043;" text="Place Order" textFill="WHITE">
+            <JFXButton layoutX="1017.0" layoutY="678.0" onAction="#btnPlaceOrderOnAction" prefHeight="37.0" prefWidth="122.0" style="-fx-background-color: #FB0043;" text="Place Order" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -115,7 +115,7 @@
             <Label fx:id="lblDescription" layoutX="282.0" layoutY="274.0" prefHeight="16.0" prefWidth="103.0" />
             <Label fx:id="lblUnitPrice" layoutX="434.0" layoutY="274.0" prefHeight="16.0" prefWidth="103.0" />
             <Label fx:id="lblQtyOnHand" layoutX="601.0" layoutY="274.0" prefHeight="16.0" prefWidth="103.0" />
-            <Label fx:id="lblTotal" layoutX="123.0" layoutY="733.0" prefHeight="37.0" prefWidth="122.0">
+            <Label fx:id="lblTotal" layoutX="123.0" layoutY="669.0" prefHeight="37.0" prefWidth="122.0">
                <font>
                   <Font size="21.0" />
                </font>

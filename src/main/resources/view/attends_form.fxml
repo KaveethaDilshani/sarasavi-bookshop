@@ -18,12 +18,12 @@
          <children>
             <AnchorPane layoutX="-1.0" layoutY="115.0" prefHeight="718.0" prefWidth="316.0" style="-fx-background-color: #dfe4ea;">
                <children>
-                  <JFXButton layoutX="42.0" layoutY="472.0" onAction="#btnAddOnAction" prefHeight="31.0" prefWidth="100.0" style="-fx-background-color: BLACK;" text="Add" textFill="WHITE">
+                  <JFXButton layoutX="31.0" layoutY="466.0" onAction="#btnAddOnAction" prefHeight="31.0" prefWidth="100.0" style="-fx-background-color: BLACK;" text="Add" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton layoutX="170.0" layoutY="474.0" onAction="#btnClearOnAction" prefHeight="31.0" prefWidth="110.0" style="-fx-background-color: #000000;" text="Clear" textFill="WHITE">
+                  <JFXButton layoutX="170.0" layoutY="468.0" onAction="#btnClearOnAction" prefHeight="31.0" prefWidth="110.0" style="-fx-background-color: #000000;" text="Clear" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
@@ -34,26 +34,21 @@
                   <DatePicker fx:id="txtDate" layoutX="25.0" layoutY="143.0" prefHeight="31.0" prefWidth="251.0" />
                </children>
             </AnchorPane>
-            <Label layoutX="16.0" layoutY="38.0" prefHeight="44.0" prefWidth="239.0" text="Manage Attends">
+            <Label layoutX="14.0" layoutY="68.0" prefHeight="44.0" prefWidth="239.0" text="Manage Attends">
                <font>
                   <Font name="Arial Narrow Bold" size="26.0" />
                </font>
             </Label>
-            <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="194.0" layoutY="38.0">
+            <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="189.0" layoutY="69.0">
                <image>
                   <Image url="@../image/download%20(8).png" />
                </image>
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="317.0" prefHeight="830.0" prefWidth="1000.0" style="-fx-background-color: #85929E;">
+      <AnchorPane layoutX="317.0" prefHeight="830.0" prefWidth="1000.0" style="-fx-background-color: #dfe4ea;">
          <children>
-            <Label layoutX="383.0" layoutY="26.0" prefHeight="18.0" prefWidth="204.0" text="Employee Details">
-               <font>
-                  <Font name="Bodoni MT Black" size="22.0" />
-               </font>
-            </Label>
-            <TableView fx:id="tblAttendance" layoutX="-2.0" layoutY="86.0" prefHeight="746.0" prefWidth="1003.0">
+            <TableView fx:id="tblAttendance" layoutX="-1.0" layoutY="86.0" prefHeight="746.0" prefWidth="1003.0">
                <columns>
                   <TableColumn fx:id="colEmpId" prefWidth="228.71823120117188" text="E_id" />
                   <TableColumn fx:id="colDate" prefWidth="272.316162109375" text="Date" />
@@ -61,6 +56,11 @@
                   <TableColumn fx:id="colOtHour" prefWidth="242.071044921875" text="OT hours" />
                </columns>
             </TableView>
+            <Label layoutX="392.0" layoutY="30.0" prefHeight="44.0" prefWidth="169.0" text="Empolyee Deatils">
+               <font>
+                  <Font name="Arial Narrow Bold" size="23.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>

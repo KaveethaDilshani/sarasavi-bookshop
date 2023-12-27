@@ -6,18 +6,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
-import lk.ijse.Sarasavi.db.DbConnection;
 import lk.ijse.Sarasavi.dto.Employee;
 import lk.ijse.Sarasavi.dto.tm.EmployeeTM;
 import lk.ijse.Sarasavi.model.EmployeeModel;
 import lk.ijse.Sarasavi.util.Regex;
 import lk.ijse.Sarasavi.util.TextFields;
-import net.sf.jasperreports.engine.*;
-import net.sf.jasperreports.engine.design.JasperDesign;
-import net.sf.jasperreports.engine.xml.JRXmlLoader;
-import net.sf.jasperreports.view.JasperViewer;
 
-import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -215,15 +209,7 @@ public class EmployeeFormCntroller {
                 Regex.isTextFieldValid(TextFields.PHONE,txtNumber.getText());
     }
 
-    public void btnReportOnAction(ActionEvent actionEvent) throws JRException, SQLException {
-        InputStream resourceAsStream = getClass().getResourceAsStream("/report/EmployeeDetails.jrxml");
-        JasperDesign load = JRXmlLoader.load(resourceAsStream);
-        JasperReport jasperReport = JasperCompileManager.compileReport(load);
-        JasperPrint jasperPrint = JasperFillManager.fillReport(
-                jasperReport,
-                null,
-                DbConnection.getInstance().getConnection()
-        );
-        JasperViewer.viewReport(jasperPrint, false);
+    public void btnReportOnAction(ActionEvent actionEvent) {
+
     }
 }

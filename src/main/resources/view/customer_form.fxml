@@ -16,60 +16,60 @@
          <children>
             <AnchorPane layoutY="88.0" prefHeight="744.0" prefWidth="286.0" style="-fx-background-color: #dfe4ea;">
                <children>
-                  <JFXButton layoutX="38.0" layoutY="458.0" onAction="#btnAddOnAction" prefHeight="31.0" prefWidth="100.0" style="-fx-background-color: BLACK;" text="Add" textFill="WHITE">
+                  <JFXButton layoutX="38.0" layoutY="377.0" onAction="#btnAddOnAction" prefHeight="31.0" prefWidth="100.0" style="-fx-background-color: BLACK;" text="Add" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton layoutX="37.0" layoutY="529.0" onAction="#btnDeleteOnAction" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: BLACK;" text="Delete" textFill="WHITE">
+                  <JFXButton layoutX="39.0" layoutY="443.0" onAction="#btnDeleteOnAction" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: BLACK;" text="Delete" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton layoutX="36.0" layoutY="600.0" onAction="#btnUpdateOnAction" prefHeight="31.0" prefWidth="102.0" style="-fx-background-color: BLACK;" text="Update" textFill="WHITE">
+                  <JFXButton layoutX="40.0" layoutY="515.0" onAction="#btnUpdateOnAction" prefHeight="31.0" prefWidth="102.0" style="-fx-background-color: BLACK;" text="Update" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton layoutX="163.0" layoutY="601.0" onAction="#btnClearOnAction" prefHeight="31.0" prefWidth="110.0" style="-fx-background-color: #000000;" text="Clear" textFill="WHITE">
+                  <JFXButton layoutX="163.0" layoutY="481.0" onAction="#btnClearOnAction" prefHeight="31.0" prefWidth="110.0" style="-fx-background-color: #000000;" text="Clear" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </JFXButton>
-                  <TextField fx:id="txtId" layoutX="21.0" layoutY="145.0" onKeyReleased="#txtCustomerIdOnKeyReleasedAction" prefHeight="35.0" prefWidth="251.0" promptText="C_id" />
-                  <TextField fx:id="txtName" layoutX="22.0" layoutY="213.0" onKeyReleased="#txtCustomerNamOnKeyReleasedAction" prefHeight="35.0" prefWidth="251.0" promptText="C_name" />
-                  <TextField fx:id="txtAddress" layoutX="21.0" layoutY="286.0" onKeyReleased="#txtCustomerAddressOnKeyReleasedAction" prefHeight="35.0" prefWidth="251.0" promptText="C_Address" />
-                  <TextField fx:id="txtNumber" layoutX="20.0" layoutY="356.0" onKeyReleased="#txtCustomerNumberOnKeyReleasedAction" prefHeight="35.0" prefWidth="251.0" promptText="C_Number" />
-                  <JFXButton layoutX="163.0" layoutY="664.0" onAction="#btnReportOnAction" prefHeight="31.0" prefWidth="110.0" style="-fx-background-color: #FFD500;" text="Report">
+                  <TextField fx:id="txtId" layoutX="15.0" layoutY="110.0" onKeyReleased="#txtCustomerIdOnKeyReleasedAction" prefHeight="35.0" prefWidth="251.0" promptText="C_id" />
+                  <TextField fx:id="txtName" layoutX="16.0" layoutY="169.0" onKeyReleased="#txtCustomerNamOnKeyReleasedAction" prefHeight="35.0" prefWidth="251.0" promptText="C_name" />
+                  <TextField fx:id="txtAddress" layoutX="16.0" layoutY="225.0" onKeyReleased="#txtCustomerAddressOnKeyReleasedAction" prefHeight="35.0" prefWidth="251.0" promptText="C_Address" />
+                  <TextField fx:id="txtNumber" layoutX="17.0" layoutY="284.0" onKeyReleased="#txtCustomerNumberOnKeyReleasedAction" prefHeight="35.0" prefWidth="251.0" promptText="C_Number" />
+                  <JFXButton layoutX="165.0" layoutY="550.0" onAction="#btnReportOnAction" prefHeight="31.0" prefWidth="110.0" style="-fx-background-color: #FFD500;" text="Report">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </JFXButton>
-                  <TextField fx:id="txtSearch" layoutX="15.0" layoutY="62.0" prefHeight="31.0" prefWidth="258.0" promptText="Search" />
+                  <TextField fx:id="txtSearch" layoutX="15.0" layoutY="45.0" prefHeight="31.0" prefWidth="258.0" promptText="Search" />
                </children>
             </AnchorPane>
-            <Label layoutX="16.0" layoutY="16.0" prefHeight="44.0" prefWidth="239.0" text="Manage Customer">
+            <Label layoutX="8.0" layoutY="41.0" prefHeight="44.0" prefWidth="239.0" text="Manage Customer">
                <font>
                   <Font name="Arial Narrow Bold" size="26.0" />
                </font>
             </Label>
-            <ImageView fitHeight="44.0" fitWidth="49.0" layoutX="210.0" layoutY="16.0">
+            <ImageView fitHeight="44.0" fitWidth="49.0" layoutX="196.0" layoutY="45.0">
                <image>
                   <Image url="@../image/2715035-200.png" />
                </image>
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="289.0" prefHeight="830.0" prefWidth="952.0" style="-fx-background-color: #85929E;">
+      <AnchorPane layoutX="289.0" prefHeight="830.0" prefWidth="952.0" style="-fx-background-color: #dfe4ea;">
          <children>
-            <Label layoutX="387.0" layoutY="20.0" prefHeight="44.0" prefWidth="239.0" text="Manage Customer">
+            <Label layoutX="392.0" layoutY="28.0" prefHeight="46.0" prefWidth="220.0" text=" Customer Deatils">
                <font>
-                  <Font name="Arial Narrow Bold" size="26.0" />
+                  <Font name="Arial Narrow Bold" size="23.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-      <TableView fx:id="tblCustomer" layoutX="289.0" layoutY="87.0" prefHeight="744.0" prefWidth="952.0" style="-fx-background-color: white;">
+      <TableView fx:id="tblCustomer" layoutX="288.0" layoutY="88.0" prefHeight="743.0" prefWidth="952.0" style="-fx-background-color: white;">
          <columns>
             <TableColumn fx:id="colId" prefWidth="240.79998779296875" text="C_id" />
             <TableColumn fx:id="colName" prefWidth="245.60003662109375" text="C_name" />

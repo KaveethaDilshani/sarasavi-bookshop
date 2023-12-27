@@ -10,18 +10,12 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
-import lk.ijse.Sarasavi.db.DbConnection;
 import lk.ijse.Sarasavi.dto.SupplierDto;
 import lk.ijse.Sarasavi.dto.tm.SupplierTM;
 import lk.ijse.Sarasavi.model.SupplierModel;
 import lk.ijse.Sarasavi.util.Regex;
 import lk.ijse.Sarasavi.util.TextFields;
-import net.sf.jasperreports.engine.*;
-import net.sf.jasperreports.engine.design.JasperDesign;
-import net.sf.jasperreports.engine.xml.JRXmlLoader;
-import net.sf.jasperreports.view.JasperViewer;
 
-import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -211,17 +205,7 @@ public class SupllierFormController {
         txtS_number.setText(String.valueOf(supplierDto.getContactNumber()));
     }
 
-    public void btnReportOnAction(ActionEvent actionEvent) throws JRException, SQLException {
-        InputStream resourceAsStream = getClass().getResourceAsStream("/report/supplierdetails.jrxml");
-        JasperDesign load = JRXmlLoader.load(resourceAsStream);
-        JasperReport jasperReport = JasperCompileManager.compileReport(load);
-        JasperPrint jasperPrint = JasperFillManager.fillReport(
-                jasperReport,
-                null,
-                DbConnection.getInstance().getConnection()
-        );
-        JasperViewer.viewReport(jasperPrint, false);
+    public void btnReportOnAction(ActionEvent actionEvent) {
+
     }
 }
-
-

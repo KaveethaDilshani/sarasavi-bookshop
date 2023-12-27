@@ -41,19 +41,19 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="279.0" layoutY="-3.0" prefHeight="830.0" prefWidth="952.0" style="-fx-background-color: #85929E;">
+      <AnchorPane layoutX="279.0" layoutY="-3.0" prefHeight="830.0" prefWidth="952.0" style="-fx-background-color: #dfe4ea;">
          <children>
-            <Label layoutX="300.0" layoutY="14.0" prefHeight="74.0" prefWidth="315.0" text="Annuwaly Income Report" textAlignment="CENTER">
-               <font>
-                  <Font name="Bodoni MT Black" size="22.0" />
-               </font>
-            </Label>
-            <TableView fx:id="tblIncome" layoutX="18.0" layoutY="82.0" prefHeight="756.0" prefWidth="902.0">
+            <TableView fx:id="tblIncome" layoutX="-1.0" layoutY="82.0" prefHeight="756.0" prefWidth="952.0">
                <columns>
                   <TableColumn fx:id="colYear" prefWidth="442.3999938964844" text="YEAR" />
                   <TableColumn fx:id="colIncome" prefWidth="510.39996337890625" text="Income" />
                </columns>
             </TableView>
+            <Label layoutX="313.0" layoutY="25.0" prefHeight="44.0" prefWidth="274.0" text="Annuwaly Income Report">
+               <font>
+                  <Font name="Arial Narrow Bold" size="23.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>

@@ -2,14 +2,14 @@ package lk.ijse.Sarasavi.controller;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.collections.transformation.FilteredList;
-import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
 import lk.ijse.Sarasavi.db.DbConnection;
 import lk.ijse.Sarasavi.dto.CustomerDto;
 import lk.ijse.Sarasavi.dto.tm.CustomerTm;
@@ -26,7 +26,6 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class CustomerFormController {
-    public TextField txtSearch;
     @FXML
     private TextField txtAddress;
 
@@ -57,7 +56,6 @@ public class CustomerFormController {
     public void initialize() {
         setCellValueFactory();
         loadAllCustomer();
-        itemSerachOnAction();
     }
 
     private void setCellValueFactory() {
@@ -69,6 +67,7 @@ public class CustomerFormController {
 
     private void loadAllCustomer() {
         var model = new CustomerModel();
+
         ObservableList<CustomerTm> obList = FXCollections.observableArrayList();
         try{
             List<CustomerDto> dtoList = model.getAllCustomer();
@@ -214,52 +213,5 @@ public class CustomerFormController {
                 DbConnection.getInstance().getConnection()
         );
         JasperViewer.viewReport(jasperPrint, false);
-    }
-
-    public void txtCustomerNumOnAction(ActionEvent actionEvent) throws SQLException {
-        CustomerDto customerDto = CustomerModel.searchCustomer(txtNumber.getText());
-
-
-    }
-    public void itemSerachOnAction() {
-        FilteredList<CustomerTm> filteredData = new FilteredList<>(tblCustomer.getItems(), b -> true);
-        txtSearch.textProperty().addListener((observable, oldValue, newValue) -> {
-            filteredData.setPredicate(item -> {
-                if (newValue == null || newValue.isEmpty()) {
-                    return true;
-                }
-                String serchKey = newValue.toLowerCase();
-
-                if (item.getId().toString().contains(serchKey)) {
-                    return true;
-                } else if (item.getNumber().toLowerCase().contains(serchKey)) {
-                    return true;
-                } else return false;
-            });
-        });
-
-        SortedList<CustomerTm> sortedList = new SortedList<>(filteredData);
-        sortedList.comparatorProperty().bind(tblCustomer.comparatorProperty());
-        tblCustomer.setItems(sortedList);
-    }
-
-    public void tblCustomerOnMouseClicked(MouseEvent mouseEvent) {
-        CustomerTm selectedItem = tblCustomer.getSelectionModel().getSelectedItem();
-        if(selectedItem!=null){
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Do you want to delete selected customer? ");
-            alert.showAndWait();
-            if(alert.getResult()== ButtonType.OK){
-                try {
-                    new Alert(Alert.AlertType.INFORMATION,
-                            CustomerModel.deleteCustomer(selectedItem.getId())
-                                    ?"Customer deleted!":"Error"
-                    ).show();
-                    loadAllCustomer();
-                } catch (SQLException e) {
-                    new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
-                }
-            }
-        }
-
     }
 }

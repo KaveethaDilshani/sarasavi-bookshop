@@ -8,18 +8,12 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
-import lk.ijse.Sarasavi.db.DbConnection;
 import lk.ijse.Sarasavi.dto.Item;
 import lk.ijse.Sarasavi.dto.tm.ItemTM;
 import lk.ijse.Sarasavi.model.ItemModel;
 import lk.ijse.Sarasavi.util.Regex;
 import lk.ijse.Sarasavi.util.TextFields;
-import net.sf.jasperreports.engine.*;
-import net.sf.jasperreports.engine.design.JasperDesign;
-import net.sf.jasperreports.engine.xml.JRXmlLoader;
-import net.sf.jasperreports.view.JasperViewer;
 
-import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -211,15 +205,7 @@ public class ItemsFormController {
                 Regex.isTextFieldValid(TextFields.INTEGER,txtQty.getText());
     }
 
-    public void btnReportOnAction(ActionEvent actionEvent) throws JRException, SQLException {
-        InputStream resourceAsStream = getClass().getResourceAsStream("/report/itemdetails.jrxml");
-        JasperDesign load = JRXmlLoader.load(resourceAsStream);
-        JasperReport jasperReport = JasperCompileManager.compileReport(load);
-        JasperPrint jasperPrint = JasperFillManager.fillReport(
-                jasperReport,
-                null,
-                DbConnection.getInstance().getConnection()
-        );
-        JasperViewer.viewReport(jasperPrint, false);
+    public void btnReportOnAction(ActionEvent actionEvent) {
+
     }
 }

@@ -16,22 +16,22 @@
          <children>
             <AnchorPane layoutX="-1.0" layoutY="90.0" prefHeight="745.0" prefWidth="334.0" style="-fx-background-color: #dfe4ea;">
                <children>
-                  <JFXButton layoutX="41.0" layoutY="401.0" onAction="#btnAddOnAction" prefHeight="31.0" prefWidth="100.0" style="-fx-background-color: BLACK;" text="Add" textFill="WHITE">
+                  <JFXButton layoutX="41.0" layoutY="372.0" onAction="#btnAddOnAction" prefHeight="31.0" prefWidth="100.0" style="-fx-background-color: BLACK;" text="Add" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton layoutX="39.0" layoutY="489.0" onAction="#btnDeleteOnAction" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: BLACK;" text="Delete" textFill="WHITE">
+                  <JFXButton layoutX="41.0" layoutY="442.0" onAction="#btnDeleteOnAction" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: BLACK;" text="Delete" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton layoutX="37.0" layoutY="575.0" onAction="#btnUpdateOnAction" prefHeight="31.0" prefWidth="102.0" style="-fx-background-color: BLACK;" text="Update" textFill="WHITE">
+                  <JFXButton layoutX="41.0" layoutY="511.0" onAction="#btnUpdateOnAction" prefHeight="31.0" prefWidth="102.0" style="-fx-background-color: BLACK;" text="Update" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton layoutX="178.0" layoutY="574.0" onAction="#btnClearOnAction" prefHeight="31.0" prefWidth="110.0" style="-fx-background-color: BLACK;" text="Clear" textFill="WHITE">
+                  <JFXButton layoutX="178.0" layoutY="478.0" onAction="#btnClearOnAction" prefHeight="31.0" prefWidth="110.0" style="-fx-background-color: BLACK;" text="Clear" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
@@ -42,24 +42,24 @@
                   <TextField fx:id="txtS_number" layoutX="23.0" layoutY="273.0" onKeyReleased="#txtSupplierNumberOnKeyReleased" prefHeight="35.0" prefWidth="251.0" promptText="S_number" />
                </children>
             </AnchorPane>
-            <Label layoutX="16.0" layoutY="20.0" prefHeight="44.0" prefWidth="239.0" text="Manage Supllier">
+            <Label layoutX="16.0" layoutY="44.0" prefHeight="44.0" prefWidth="239.0" text="Manage Supllier">
                <font>
                   <Font name="Arial Narrow Bold" size="26.0" />
                </font>
             </Label>
-            <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="187.0" layoutY="19.0">
+            <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="187.0" layoutY="26.0">
                <image>
                   <Image url="@../image/images%20(5).png" />
                </image>
             </ImageView>
-            <JFXButton layoutX="177.0" layoutY="754.0" onAction="#btnReportOnAction" prefHeight="31.0" prefWidth="110.0" style="-fx-background-color: #FFD500;" text="Report">
+            <JFXButton layoutX="179.0" layoutY="645.0" onAction="#btnReportOnAction" prefHeight="31.0" prefWidth="110.0" style="-fx-background-color: #FFD500;" text="Report">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </JFXButton>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="332.0" prefHeight="830.0" prefWidth="952.0" style="-fx-background-color: #85929E;">
+      <AnchorPane layoutX="332.0" prefHeight="830.0" prefWidth="952.0" style="-fx-background-color: #dfe4ea;">
          <children>
             <TableView fx:id="tblSuppliers" layoutX="1.0" layoutY="88.0" prefHeight="751.0" prefWidth="952.0" style="-fx-background-color: white;">
                <columns>
@@ -69,9 +69,9 @@
                   <TableColumn fx:id="colNumber" prefWidth="226.39996337890625" text="number" />
                </columns>
             </TableView>
-            <Label layoutX="389.0" layoutY="26.0" prefHeight="44.0" prefWidth="239.0" text="Manage Supllier">
+            <Label layoutX="389.0" layoutY="26.0" prefHeight="44.0" prefWidth="239.0" text=" Supllier Deatils">
                <font>
-                  <Font name="Arial Narrow Bold" size="26.0" />
+                  <Font name="Arial Narrow Bold" size="23.0" />
                </font>
             </Label>
          </children>

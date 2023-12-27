@@ -1,19 +1,32 @@
 package lk.ijse.Sarasavi.controller;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 public class ButtonbarFromController {
     @FXML
     private AnchorPane rootNode;
 
+    @FXML
+    private Label lblDate;
+
+    @FXML
+    private Label lblTime;
 
     @FXML
     private AnchorPane mainNode;
@@ -22,9 +35,22 @@ public class ButtonbarFromController {
         Parent rootNode = FXMLLoader.load(this.getClass().getResource("/view/dashboard_form.fxml"));
         this.mainNode.getChildren().clear();
         this.mainNode.getChildren().add(rootNode);
-
+        setDateAndTime();
     }
 
+    private void setDateAndTime() {
+        Platform.runLater(() -> {
+            lblDate.setText(String.valueOf(LocalDate.now()));
+
+            Timeline timeline = new Timeline(new KeyFrame(Duration.millis(1), event -> {
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm:ss");
+                String timeNow = LocalTime.now().format(formatter);
+                lblTime.setText(timeNow);
+            }));
+            timeline.setCycleCount(Timeline.INDEFINITE);
+            timeline.play();
+        });
+    }
 
     @FXML
     void btnDashboardOnAction(ActionEvent event) throws IOException {
