@@ -9,6 +9,7 @@ import java.util.List;
 import lk.ijse.Sarasavi.db.DbConnection;
 import lk.ijse.Sarasavi.dto.CustomerDto;
 import lk.ijse.Sarasavi.dto.Employee;
+import lk.ijse.Sarasavi.dto.Item;
 
 
 public class EmployeeModel {
@@ -50,28 +51,25 @@ public class EmployeeModel {
 
         }
     }
-    public static Employee searchEmployee(int C_number) throws SQLException {
-
+    public static Employee searchEmployee(String E_id) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
-        String sql = "select * from Employee where Contact_number=?";
-        PreparedStatement pstm = connection.prepareStatement(sql);
+        String sql = "SELECT * FROM Employee WHERE E_id = ?";
+        try (PreparedStatement pstm = connection.prepareStatement(sql)) {
+            pstm.setString(1, E_id);
 
-        pstm.setInt(1, C_number);
+            try (ResultSet resultSet = pstm.executeQuery()) {
+                Employee employee = null;
+                if (resultSet.next()) {
+                    String E_name = resultSet.getString("E_name");
+                   String E_address = resultSet.getString("E_address");
+                   int Contact_number= resultSet.getInt("Contact_number");
+                    E_id = resultSet.getString("E_id");
 
-        ResultSet resultSet = pstm.executeQuery();
-
-        Employee employee = null;
-
-        if(resultSet.next()) {
-            String E_id = resultSet.getString(1);
-            String E_name = resultSet.getString(2);
-            String  E_address= resultSet.getString(3);
-            int Contact_number= resultSet.getInt(4);
-
-            employee= new Employee(E_id, E_name, E_address, Contact_number);
+                    employee  = new Employee(E_name,E_address,Contact_number,E_id);
+                }
+                return employee;
+            }
         }
-        System.out.println(employee);
-        return employee;
     }
 
    /* public static Employee searchEmployee(String eName) throws SQLException {

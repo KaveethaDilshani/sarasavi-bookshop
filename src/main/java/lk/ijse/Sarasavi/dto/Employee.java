@@ -17,6 +17,9 @@ public class Employee {
         this.contactNumber = contactNumber;
     }
 
+    public Employee(String eName, String eAddress, int contactNumber, String eId) {
+    }
+
     public String getEName() {
         return eName;
     }

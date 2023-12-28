@@ -13,4 +13,7 @@ public class Item {
     private double price;
     private String category;
     private int qty;
+
+    public Item(String eName, String eAddress, int contactNumber, String eId) {
+    }
 }

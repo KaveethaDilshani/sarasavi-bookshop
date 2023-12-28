@@ -16,33 +16,28 @@
                   <Image url="@../image/3d-books-notepad-pencil-pen-eraser_107791-15690.jpg" />
                </image>
             </ImageView>
-            <Label layoutX="166.0" layoutY="67.0" prefHeight="59.0" prefWidth="444.0" text=" SARASAVI BOOKSHOP...">
+            <Label layoutX="166.0" layoutY="107.0" prefHeight="59.0" prefWidth="444.0" text=" SARASAVI BOOKSHOP...">
                <font>
                   <Font name="Century" size="34.0" />
                </font>
             </Label>
-            <ImageView fitHeight="523.0" fitWidth="575.0" layoutX="637.0" layoutY="252.0">
-               <image>
-                  <Image url="@../image/Printable-December-2023-Calendar-5-791x1024.jpg" />
-               </image>
-            </ImageView>
-            <JFXButton layoutX="635.0" layoutY="51.0" prefHeight="93.0" prefWidth="159.0" style="-fx-background-color: black; -fx-background-radius: 20;" text="Customer" textFill="WHITE">
+            <JFXButton layoutX="635.0" layoutY="322.0" prefHeight="93.0" prefWidth="159.0" style="-fx-background-color: black; -fx-background-radius: 20;" text="Customer" textFill="WHITE">
                <font>
                   <Font name="Book Antiqua" size="24.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="826.0" layoutY="52.0" prefHeight="94.0" prefWidth="159.0" style="-fx-background-color: black; -fx-background-radius: 20;" text="Employee" textFill="WHITE">
+            <JFXButton layoutX="850.0" layoutY="320.0" prefHeight="94.0" prefWidth="159.0" style="-fx-background-color: black; -fx-background-radius: 20;" text="Employee" textFill="WHITE">
                <font>
                   <Font name="Book Antiqua" size="24.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="1017.0" layoutY="52.0" prefHeight="94.0" prefWidth="159.0" style="-fx-background-color: black; -fx-background-radius: 20;" text="Income" textFill="WHITE">
+            <JFXButton layoutX="1066.0" layoutY="316.0" prefHeight="94.0" prefWidth="159.0" style="-fx-background-color: black; -fx-background-radius: 20;" text="Income" textFill="WHITE">
                <font>
                   <Font name="Book Antiqua" size="24.0" />
                </font>
             </JFXButton>
          </children></AnchorPane>
-      <Label layoutX="10.0" layoutY="8.0" prefHeight="59.0" prefWidth="260.0" text="WELCOME TO " textFill="#a61818">
+      <Label layoutX="10.0" layoutY="37.0" prefHeight="59.0" prefWidth="260.0" text="WELCOME TO " textFill="#a61818">
          <font>
             <Font name="Century" size="34.0" />
          </font>

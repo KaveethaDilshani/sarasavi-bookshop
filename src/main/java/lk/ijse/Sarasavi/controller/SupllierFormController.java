@@ -10,12 +10,18 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
+import lk.ijse.Sarasavi.db.DbConnection;
 import lk.ijse.Sarasavi.dto.SupplierDto;
 import lk.ijse.Sarasavi.dto.tm.SupplierTM;
 import lk.ijse.Sarasavi.model.SupplierModel;
 import lk.ijse.Sarasavi.util.Regex;
 import lk.ijse.Sarasavi.util.TextFields;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
+import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -39,14 +45,15 @@ public class SupllierFormController {
     @FXML
     private TextField txtS_number;
 
-    public void initialize(){
+    public void initialize() {
         setCell();
         setTable();
     }
+
     @FXML
     void btnAddOnAction(ActionEvent event) {
 
-        if (!validate()){
+        if (!validate()) {
             new Alert(Alert.AlertType.ERROR, "Fill Fields with valid Details").show();
             return;
         }
@@ -54,11 +61,11 @@ public class SupllierFormController {
         SupplierDto supplierDto = collectData();
         try {
             boolean b = SupplierModel.saveSupplier(supplierDto);
-            if (b){
+            if (b) {
                 new Alert(Alert.AlertType.INFORMATION, "Supplier Added").show();
                 setTable();
                 btnClearOnAction(event);
-            }else {
+            } else {
                 new Alert(Alert.AlertType.ERROR, "Something went wrong").show();
             }
         } catch (SQLException e) {
@@ -79,7 +86,7 @@ public class SupllierFormController {
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
 
-        if (!Regex.setTextColor(TextFields.INTEGER,txtS_id)){
+        if (!Regex.setTextColor(TextFields.INTEGER, txtS_id)) {
             new Alert(Alert.AlertType.ERROR, "Enter Valid Id").show();
             return;
         }
@@ -88,11 +95,11 @@ public class SupllierFormController {
         int id = Integer.parseInt(text);
         try {
             boolean b = SupplierModel.deleteSupplier(id);
-            if (b){
+            if (b) {
                 new Alert(Alert.AlertType.INFORMATION, "Supplier Deleted").show();
                 setTable();
                 btnClearOnAction(event);
-            }else {
+            } else {
                 new Alert(Alert.AlertType.ERROR, "Something went wrong").show();
             }
         } catch (SQLException e) {
@@ -103,18 +110,18 @@ public class SupllierFormController {
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
-        if (!validate()){
+        if (!validate()) {
             new Alert(Alert.AlertType.ERROR, "Fill Fields with valid Details").show();
             return;
         }
         SupplierDto supplierDto = collectData();
         try {
             boolean b = SupplierModel.updateSupplier(supplierDto);
-            if (b){
+            if (b) {
                 new Alert(Alert.AlertType.INFORMATION, "Supplier Updated").show();
                 setTable();
                 btnClearOnAction(event);
-            }else {
+            } else {
                 new Alert(Alert.AlertType.ERROR, "Something went wrong").show();
             }
         } catch (SQLException e) {
@@ -123,7 +130,7 @@ public class SupllierFormController {
         }
     }
 
-    public SupplierDto collectData(){
+    public SupplierDto collectData() {
         return new SupplierDto(
                 Integer.parseInt(txtS_id.getText()),
                 txtS_name.getText(),
@@ -132,7 +139,7 @@ public class SupllierFormController {
         );
     }
 
-    public void setTable(){
+    public void setTable() {
         try {
             List<SupplierTM> list = new ArrayList<>();
             List<SupplierDto> allSuppliers = SupplierModel.getAllSuppliers();
@@ -152,7 +159,7 @@ public class SupllierFormController {
         }
     }
 
-    public void setCell(){
+    public void setCell() {
         colId.setCellValueFactory(new PropertyValueFactory<>("id"));
         colname.setCellValueFactory(new PropertyValueFactory<>("name"));
         colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
@@ -161,30 +168,30 @@ public class SupllierFormController {
 
 
     public void txtSupplierIdOnKeyReleased(KeyEvent keyEvent) {
-        Regex.setTextColor(TextFields.ID,txtS_id);
+        Regex.setTextColor(TextFields.ID, txtS_id);
     }
 
     public void txtSupplierNameOnKeyReleased(KeyEvent keyEvent) {
-        Regex.setTextColor(TextFields.NAME,txtS_name);
+        Regex.setTextColor(TextFields.NAME, txtS_name);
     }
 
     public void txtSupplierAddressOnKeyReleased(KeyEvent keyEvent) {
-        Regex.setTextColor(TextFields.ADDRESS,txtS_address);
+        Regex.setTextColor(TextFields.ADDRESS, txtS_address);
     }
 
     public void txtSupplierNumberOnKeyReleased(KeyEvent keyEvent) {
-        Regex.setTextColor(TextFields.PHONE,txtS_number);
+        Regex.setTextColor(TextFields.PHONE, txtS_number);
     }
 
-    public boolean validate(){
-        return Regex.isTextFieldValid(TextFields.ID,txtS_id.getText()) &&
-                Regex.isTextFieldValid(TextFields.NAME,txtS_name.getText()) &&
-                Regex.isTextFieldValid(TextFields.ADDRESS,txtS_address.getText()) &&
-                Regex.isTextFieldValid(TextFields.PHONE,txtS_number.getText());
+    public boolean validate() {
+        return Regex.isTextFieldValid(TextFields.ID, txtS_id.getText()) &&
+                Regex.isTextFieldValid(TextFields.NAME, txtS_name.getText()) &&
+                Regex.isTextFieldValid(TextFields.ADDRESS, txtS_address.getText()) &&
+                Regex.isTextFieldValid(TextFields.PHONE, txtS_number.getText());
     }
 
     public void txtSearchOnAction(ActionEvent actionEvent) {
-        if (!Regex.setTextColor(TextFields.INTEGER,txtS_id)){
+        if (!Regex.setTextColor(TextFields.INTEGER, txtS_id)) {
             new Alert(Alert.AlertType.ERROR, "Enter Valid Id").show();
             return;
         }
@@ -205,7 +212,15 @@ public class SupllierFormController {
         txtS_number.setText(String.valueOf(supplierDto.getContactNumber()));
     }
 
-    public void btnReportOnAction(ActionEvent actionEvent) {
-
+    public void btnReportOnAction(ActionEvent actionEvent) throws SQLException, JRException {
+        InputStream resourceAsStream = getClass().getResourceAsStream("/report/supllierdetails.jrxml");
+        JasperDesign load = JRXmlLoader.load(resourceAsStream);
+        JasperReport jasperReport = JasperCompileManager.compileReport(load);
+        JasperPrint jasperPrint = JasperFillManager.fillReport(
+                jasperReport,
+                null,
+                DbConnection.getInstance().getConnection()
+        );
+        JasperViewer.viewReport(jasperPrint, false);
     }
 }
