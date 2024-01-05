@@ -1,5 +1,6 @@
 package lk.ijse.Sarasavi.controller;
 
+import com.jfoenix.controls.base.IFXStaticControl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -39,26 +40,34 @@ public class LoginPageController {
         String username = txtUserName.getText();
         String password = txtPassword.getText();
         Connection connection = DbConnection.getInstance().getConnection();
-        String sql = "SELECT * FROM user WHERE name = ? AND password = ?";
+        String sql = "SELECT * FROM user WHERE name = ? and password = ?";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, username);
             preparedStatement.setString(2, password);
-
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
-                Parent rootNode = FXMLLoader.load(this.getClass().getResource("/view/buttonbar_from.fxml"));
-                Scene scene =new Scene(rootNode);
-                Stage primaryStage = (Stage) this.rootNode.getScene().getWindow();
-                primaryStage.setScene(scene);
-                primaryStage.setTitle("Dashboard");
-            } else {
-                new Alert(Alert.AlertType.ERROR, "oops! credentials are wrong!").show();
+                if (resultSet.getString("name").equals(username)&&resultSet.getString("password").equals(password)){
+                   loadDashBoard();
+                }
+                else {
+                    new Alert(Alert.AlertType.ERROR, "oops! credentials are wrong!").show();
             }
-        } catch (SQLException | IOException e) {
+            }
+        } catch (SQLException e) {
             e.printStackTrace();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
+    }
+
+    private void loadDashBoard() throws IOException {
+        Parent rootNode = FXMLLoader.load(this.getClass().getResource("/view/buttonbar_from.fxml"));
+        Scene scene =new Scene(rootNode);
+        Stage primaryStage = (Stage) this.rootNode.getScene().getWindow();
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("Dashboard");
     }
 
     @FXML

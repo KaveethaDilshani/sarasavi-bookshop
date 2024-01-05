@@ -44,8 +44,8 @@ public class Employee {
         this.eAddress = eAddress;
     }
 
-    public int getContactNumber() {
-        return contactNumber;
+    public String getContactNumber() {
+        return String.valueOf(contactNumber);
     }
 
     public void setContactNumber(int contactNumber) {

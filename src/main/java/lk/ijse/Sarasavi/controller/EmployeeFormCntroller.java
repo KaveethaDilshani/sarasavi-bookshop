@@ -136,7 +136,7 @@ public class EmployeeFormCntroller {
                 employeeTM.setId(allEmployee.getEName());
                 employeeTM.setName(allEmployee.getEId());
                 employeeTM.setAddress(allEmployee.getEAddress());
-                employeeTM.setContactNumber(allEmployee.getContactNumber());
+                employeeTM.setContactNumber(Integer.parseInt(allEmployee.getContactNumber()));
                 tm.add(employeeTM);
             }
             tblEmployee.setItems(FXCollections.observableArrayList(tm));
@@ -178,9 +178,14 @@ public class EmployeeFormCntroller {
     }
 
     public void txtIdSearchOnAction(ActionEvent actionEvent) {
-        int E_id = Integer.parseInt(txtId.getText());
+        EmployeeModel model = new EmployeeModel();
+        String E_id = (txtId.getText());
         try {
-            Employee employee = EmployeeModel.searchEmployee(String.valueOf(E_id));
+            Employee employee = model.searchEmployee((E_id));
+            System.out.println(employee);
+            txtName.setText(employee.getEName());
+            txtAddress.setText(employee.getEAddress());
+            txtNumber.setText(employee.getContactNumber());
             if (employee == null) {
                 new Alert(Alert.AlertType.ERROR, "No Employee Found").show();
                 return;
